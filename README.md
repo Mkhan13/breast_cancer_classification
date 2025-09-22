@@ -1,7 +1,7 @@
 # Breast Tissue Histopathology Classification
 
 ## Problem
-
+Accurate and early detection of breast cancer is critical for patient outcomes. Pathologists analyze histopathology images to distinguish benign from malignant tissue. This project develops a model to classify breast histopathology image patches as *benign* or *malignant* using machine learning and deep learning methods.
 
 ---
 
