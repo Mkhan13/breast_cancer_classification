@@ -21,7 +21,7 @@ def make_dirs():
     """
     for split in ["train", "val", "test"]:
         for cls in ["0", "1"]:
-            (OUTPUT_DIR / split / cls).mkdir(parents=True, exist_ok=True)
+            (OUTPUT_DIR / split / cls).mkdir(parents=True, exist_ok=True) # Line written with GPT-5
 
 def split_patients():
     """
@@ -40,7 +40,7 @@ def copy_images(patient_ids, split_name):
     Copy images for a split (train/val/test) into the data/processed directory
     """
     for pid in patient_ids:
-        patient_folder = RAW_DATA_DIR / pid
+        patient_folder = RAW_DATA_DIR / pid # Line written with GPT-5
         if not patient_folder.exists():
             continue
 
@@ -50,7 +50,7 @@ def copy_images(patient_ids, split_name):
                 continue
 
             for img_file in class_folder.glob("*.png"): # Copy all PNG images into the correct folder
-                dest = OUTPUT_DIR / split_name / cls / img_file.name
+                dest = OUTPUT_DIR / split_name / cls / img_file.name # Line written with GPT-5
                 shutil.copy(img_file, dest)
 
 def main():
