@@ -31,6 +31,13 @@ While projects applying deep learning to breast cancer clasification have been c
 
 
 ### Data Processing Pipeline  
+The raw dataset is organized by patient IDs, each containing subfolders `0/` (non-cancerous) and `1/` (cancerous). To avoid data leakage, patients (not individual images) are split into **train (80%)**, **validation (10%)**, and **test (10%)** sets.  
+
+The images are then copied into a standardized folder structure under `data/processed/`:
+data/processed/
+├── train/{0,1}/
+├── val/{0,1}/
+└── test/{0,1}/
 
 ### Models Evaluated and Model Selected  
 - **Evaluated Models:**  
