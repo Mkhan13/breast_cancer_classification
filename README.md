@@ -6,7 +6,7 @@ Breast cancer is the most common form of cancer in women, and invasive ductal ca
 ---
 
 ## Data Source
-- **Invasive Ductal Carcinoma (IDC) Histology Image Dataset** on [Kaggle](https://www.kaggle.com/datasets/paultimothymooney/breast-histopathology-images)  
+- **[Invasive Ductal Carcinoma (IDC) Histology Image Dataset](https://academictorrents.com/details/e40bd59ab08861329ce3c418be191651f35e2ffa)**
   - Binary classes: benign vs malignant tissue patches
   - Class distribution: 198,738 IDC negative, 78,786 IDC positive
 
@@ -33,25 +33,38 @@ All three approaches (naive, classical ML, and deep learning) are trained and ev
 ---
 
 ## Modeling Approach  
-1. **Naive Baseline:** 
-2. **Classical ML Approach:**  
-3. **Deep Learning Approach:**  
+1. **Naive Baseline:** Predict the majority class
+2. **Classical ML Approach:**  Random Forest on extracted features with class weighting to handle imbalance
+3. **Deep Learning Approach:**  CNN trained end-to-end
 
 
 ### Data Processing Pipeline  
 The raw dataset is organized by patient IDs, each containing subfolders `0/` (non-cancerous) and `1/` (cancerous). To avoid data leakage, patients (not individual images) are split into **train (80%)**, **validation (10%)**, and **test (10%)** sets.  
 
-The images are then copied into a standardized folder structure under `data/processed/`:
+The images are then copied into a standardized folder structure under `data/processed/`:  
+```
 data/processed/
-├── train/{0,1}/
-├── val/{0,1}/
-└── test/{0,1}/
+├── train/
+│   ├── 0/
+│   └── 1/
+├── val/
+│   ├── 0/
+│   └── 1/
+└── test/
+    ├── 0/
+    └── 1/
+```
 
 ### Models Evaluated and Model Selected  
-- **Evaluated Models:**  
-  - Naive baseline  
-  - Classical ML model
-  - Deep Learning
+- **Evaluated Models:**
+
+| Approach             | Accuracy | Precision (Malignant) | Recall (Malignant) | F1-score (Malignant) | ROC-AUC | Notes                                                                 |
+|----------------------|----------|------------------------|---------------------|-----------------------|---------|----------------------------------------------------------------------|
+| **Naive Baseline**   | 73%      | 0.00                   | 0.00                | 0.00                  | 0.50    | Predicts all images as benign; fails to detect malignant tissue.     |
+| **Classical ML**     | 83%      | 0.715                  | 0.636                | 0.673                  | 0.888   | Stronger at detecting malignant cases than baseline |
+| **Deep Learning**    | TBD      | TBD                    | TBD                 | TBD                   | TBD     | TBD                                                                  |
+
+
 - **Model Selected:**  
 
 ### Comparison to Naive Approach  
