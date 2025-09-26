@@ -60,15 +60,15 @@ data/processed/
 
 | Approach             | Accuracy | Precision (Malignant) | Recall (Malignant) | F1-score (Malignant) | ROC-AUC | Notes                                                                 |
 |----------------------|----------|------------------------|---------------------|-----------------------|---------|----------------------------------------------------------------------|
-| **Naive Baseline**   | 73%      | 0.00                   | 0.00                | 0.00                  | 0.50    | Predicts all images as benign; fails to detect malignant tissue.     |
-| **Classical ML**     | 83%      | 0.715                  | 0.636                | 0.673                  | 0.888   | Stronger at detecting malignant cases than baseline |
-| **Deep Learning**    | TBD      | TBD                    | TBD                 | TBD                   | TBD     | TBD                                                                  |
+| **Naive Baseline**   | 73%      | 0.00                   | 0.00                | 0.00                  | 0.50    | Predicts all images as benign; fails to detect malignant tissue    |
+| **Classical ML**     | 83%      | 0.715                  | 0.636                | 0.673                  | 0.888   | Stronger at detecting malignant cases than naive baseline |
+| **Deep Learning (CNN)** | 85%   | 0.66                   | 0.92                | 0.77                  | 0.94    | Strong ROC-AUC, highest recall for malignant cases  |
 
 
-- **Model Selected:**  
+- **Model Selected:**  Deep Learning (CNN)
 
 ### Comparison to Naive Approach  
- 
+The naive approach predicts all tissue samples as benign and completely fails to detect malignant cases and has an accuracy of 73% with zero precision or recall. The CNN has an accuracy of 85% with a recall of 0.92 meaning it successfully detected most positive cancerous samples but with less precision (66.3%). This model is sensitive to malignant cases which is preferable in medical applications where missing malignant tissue is more dangerous than false positives. The CNN has the most clinically relevant performance and is therefore the model best suited for this application. 
 
 ---
 
