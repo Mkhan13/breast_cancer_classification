@@ -6,7 +6,7 @@ from PIL import Image
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu") # Use GPU if available
 
 class SimpleCNN(nn.Module):
-    """Custom CNN for binary classification"""
+    ''' Custom CNN for binary classification '''
     def __init__(self):
         super(SimpleCNN, self).__init__()
         self.features = nn.Sequential( # Convolutional layers
@@ -37,7 +37,7 @@ class SimpleCNN(nn.Module):
         return x
 
 class BreastCancerModel:
-    """Load and use the CNN model for predictions"""
+    ''' Load and use the CNN model for predictions '''
     def __init__(self, model_path="model.pth"):
         self.model = SimpleCNN().to(device)
         self.model.load_state_dict(torch.load(model_path, map_location=device)) # Load model weights
@@ -49,7 +49,7 @@ class BreastCancerModel:
         ])
 
     def predict(self, image: Image.Image):
-        """Return predicted class (0/1) and probability"""
+        ''' Return predicted class (0/1) and probability '''
         img_t = self.transform(image).unsqueeze(0).to(device) # Add batch dimension
         with torch.no_grad(): # Disable gradient calculation
             output = self.model(img_t).squeeze(1) # Get model output
