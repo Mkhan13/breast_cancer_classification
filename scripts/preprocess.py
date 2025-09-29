@@ -16,17 +16,13 @@ val_ratio = 0.1
 test_ratio = 0.1
 
 def make_dirs():
-    """
-    Create output directories for train/val/test splits. Each split has two subfolders: '0' (benign) and '1' (malignant).
-    """
+    '''Create output directories for train/val/test splits. Each split has two subfolders: '0' (benign) and '1' (malignant).'''
     for split in ["train", "val", "test"]:
         for cls in ["0", "1"]:
             (OUTPUT_DIR / split / cls).mkdir(parents=True, exist_ok=True) # Line written with GPT-5
 
 def split_patients():
-    """
-    Split patient IDs into train/val/test sets. This ensures that patients are split, not individual images, to prevent data leakage between sets.
-    """
+    '''Split patient IDs into train/val/test sets. This ensures that patients are split, not individual images, to prevent data leakage between sets.'''
     patients = [p for p in RAW_DATA_DIR.iterdir() if p.is_dir()] # Get all patient directories
     patient_ids = [p.name for p in patients]
 
@@ -36,9 +32,7 @@ def split_patients():
     return set(train_ids), set(val_ids), set(test_ids)
 
 def copy_images(patient_ids, split_name):
-    """
-    Copy images for a split (train/val/test) into the data/processed directory
-    """
+    '''Copy images for a split (train/val/test) into the data/processed directory'''
     for pid in patient_ids:
         patient_folder = RAW_DATA_DIR / pid # Line written with GPT-5
         if not patient_folder.exists():
@@ -54,11 +48,8 @@ def copy_images(patient_ids, split_name):
                 shutil.copy(img_file, dest)
 
 def main():
-    """
-    Creates directory structure
-    Splits patients into train/val/test
-    Copies images into respective split folders
-    """
+    '''
+    Creates directory structure, splits patients into train/val/test, copies images into respective split folders'''
     make_dirs()
     train_ids, val_ids, test_ids = split_patients()
 
