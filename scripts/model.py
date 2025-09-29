@@ -59,8 +59,3 @@ class BreastCancerModel:
             else:
                 pred_class = 0
         return pred_class, round(prob, 4)
-
-if __name__ == "__main__":
-    model = BreastCancerModel("model.pth")
-    img = Image.open("test_malignant2.png") # Test image
-    print(model.predict(img))
