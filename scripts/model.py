@@ -3,6 +3,8 @@ import torch.nn as nn
 from torchvision import transforms
 from PIL import Image
 
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu") # Use GPU if available
+
 class SimpleCNN(nn.Module):
     """Custom CNN for binary classification"""
     def __init__(self):
@@ -35,7 +37,7 @@ class SimpleCNN(nn.Module):
         return x
 
 class BreastCancerModel:
-    """Wrapper for loading model and making predictions"""
+    """Load and use the CNN model for predictions"""
     def __init__(self, model_path="model.pth"):
         self.model = SimpleCNN().to(device)
         self.model.load_state_dict(torch.load(model_path, map_location=device)) # Load model weights
@@ -59,7 +61,6 @@ class BreastCancerModel:
         return pred_class, round(prob, 4)
 
 if __name__ == "__main__":
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu") # Use GPU if available
-    model_wrapper = BreastCancerModel("model.pth")
+    model = BreastCancerModel("model.pth")
     img = Image.open("test_malignant2.png") # Test image
-    print(model_wrapper.predict(img))
+    print(model.predict(img))
