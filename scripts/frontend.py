@@ -14,7 +14,7 @@ def run_frontend():
     
     if uploaded_file is not None:
         img = Image.open(uploaded_file)
-        st.image(img, caption="Uploaded Image", use_column_width=True)
+        st.image(img, caption="Uploaded Image", width=150)
 
         if st.button("Predict"):
             pred_class, prob = model.predict(img)
