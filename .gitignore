@@ -2,3 +2,12 @@
 data/
 
 .venv
+
+# Test images
+test_benign.png
+test_benign2.png
+test_malignant.png
+test_malignant2.png
+
+# Byte-compiled files
+__pycache__/
