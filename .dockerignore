@@ -1,0 +1,9 @@
+# Ignore everything by default
+*
+
+# Allow only these files
+!main.py
+!Dockerfile
+!requirements.txt
+!model.pth
+!scripts/
