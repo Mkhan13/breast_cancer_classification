@@ -93,3 +93,19 @@ This project is intended solely for educational and research purposes. This mode
 ---
 
 ## Instructions on How to Run the Code
+
+1. Clone the Repository  
+`git clone https://github.com/Mkhan13/breast_cancer_classification.git`  
+`cd breast_cancer_classification`
+
+3. Install Dependencies  
+`pip install -r requirements.txt`
+
+4. Run the Streamlit App  
+`streamlit run main.py`  
+The app will open in your browser  
+
+6. Upload a tissue image as a PNG or JPG  
+
+The model will output the predicted class (benign or malignant) and the prediction probability
+
