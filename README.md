@@ -78,8 +78,11 @@ The naive approach predicts all tissue samples as benign and completely fails to
 ---
 
 ## Results and Conclusions  
- 
+The deep learning CNN achieved an accuracy of 85%, with a ROC-AUC of 0.94. Compared to the naive baseline (73%) and the classical machine learning approach (83%), the CNN consistently produced stronger performance, particularly in recall for malignant cases (92%). These results demonstrate that the model is able to capture more subtle and complex image features that the more simpler models miss.
 
+Histopathology diagnosis by pathologists have documented error rates ranging from 1% to 9%, depending on the type of sample type and diagnosis. This CNN's performance falls within a range that's comparable to human pathologists.The CNN still misclassifies some benign tissues as malignant, or false positives, but in a medical setting this tradeoff is preferable to false negatives. A false positive can be cleared up with further testing, but a false negative, or a missed cancer diagnosis, can have more dangerous consequences.
+
+While these models won't replace pathologists, they have the potential to serve as valuable and powerful assistive tools. Further validation in clinical settings would be needed before more widespread implementation of an AI breast cancer diagnostic tool can be implemented.
 ---
 
 ## Ethics Statement  
