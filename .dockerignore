@@ -1,10 +1,9 @@
 # Ignore everything by default
 *
 
-# Allow only these files for deployment
+# Allow only these files
 !main.py
-!requirements.txt
 !Dockerfile
+!requirements.txt
 !model.pth
-!scripts/frontend.py
-!scripts/model.py
+!scripts/
