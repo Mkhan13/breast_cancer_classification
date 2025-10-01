@@ -76,6 +76,7 @@ The naive approach predicts all tissue samples as benign and completely fails to
 <img width="997" height="729" alt="Visual Interface" src="https://github.com/user-attachments/assets/a4ed9d40-1de7-47bc-afc8-b930c988a21b" />
 
 Video demo of the project can be found [here](https://drive.google.com/file/d/1h2BIcB1Hyp5ltOkDPBCCkxNpndm6q28v/view?usp=sharing)
+Streamlit site can be found [here](https://deep-learning-app-963698787646.us-central1.run.app/)
 
 ---
 
