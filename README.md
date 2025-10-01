@@ -87,7 +87,8 @@ While these models won't replace pathologists, they have the potential to serve 
 ---
 
 ## Ethics Statement  
- 
+This project is intended solely for educational and research purposes. This model should not be used for clinical decision-making or as a substitute for professional medical judgment. While the results demonstrate promising accuracy, every diagnostic tool in healthcare must go through validation and regulatory approval before use on patients. 
+
 
 ---
 
